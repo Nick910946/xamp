@@ -1,0 +1,111 @@
+
+
+
+<?php
+
+include("header.php");
+include("sidebar.php");
+
+
+?>
+
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+		    <!-- Content Header (Page header) -->
+		    <div class="content-header">
+		      <div class="container-fluid">
+		        <div class="row mb-2">
+		          <div class="col-sm-6">
+		            <h1 class="m-0">Dashboard</h1>
+		          </div><!-- /.col -->
+		          <div class="col-sm-6">
+		            <ol class="breadcrumb float-sm-right">
+		              <li class="breadcrumb-item"><a href="#">Home</a></li>
+		              <li class="breadcrumb-item active">Dashboard v1</li>
+		            </ol>
+		          </div><!-- /.col -->
+		        </div><!-- /.row -->
+		      </div><!-- /.container-fluid -->
+		    </div><!-- /.content-header -->
+		
+		<!-------ourcode start--------->
+				<?php
+
+					include "../dbcon.php";
+					 $id = $_GET['edit'];
+					 $a = "select * from admin where id = $id";
+
+					 $b = mysqli_query($con,$a);
+					 $c = mysqli_fetch_array($b);
+					 // echo "<pre>";
+
+					 // print_r($c);
+
+
+					?>
+
+	<form action="admin_update.php" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="<?php echo $c['id']?>"> 
+          <div class="form-group">
+
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" value="<?php echo $c['name'] ?>">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" class="form-control" value="<?php echo $c['email'] ?>"> 
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" value="<?php echo $c['password'] ?>"> 
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+            <textarea  name="description" class="form-control"><?php echo $c['description'] ?></textarea>
+          </div>
+
+         
+
+          <!-- <div class="form-group"> -->
+            <label>Image</label>
+            <input type="file" name="image" class="form-control">
+             <img src="<?php echo $c['image']?>" style="width: 150px; height: 150px; border-radius: 70px;">
+<br><br>
+             <button type="submit" class="btn btn-info"> update</button>
+          </div>
+
+     
+               
+
+
+        </form>
+
+
+
+		<!-------ourcode end--------->
+
+    	</div><!-------container-erapper-------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+include ("footer.php")
+
+
+?>
