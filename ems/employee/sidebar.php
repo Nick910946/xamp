@@ -1,14 +1,26 @@
 <style >
 .sidebar{
 
-    background:url(https://us.123rf.com/450wm/malshak/malshak2003/malshak200300031/141291189-abstract-dark-red-blue-purple-blurred-background-pattern-wallpaper-smooth-color-gradient-texture-ras.jpg?ver=6); 
+    background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPHYxDTEUFAPVTiCsZDYXA32stgIPYnp8Y9Oq34d5iAO7C70nSPjEPC1cZJSzgKxim1I&usqp=CAU); 
     background-size:cover;
+    background-repeat: no-repeat;
 
 }
 .fontemp{
 
 font-family: 'Vollkorn', serif;
+
+
 }
+.tittlename{
+    
+    letter-spacing: 3px;
+    
+    color:white;
+    text-alingn:center;
+}
+
+
 </style>
 
 
@@ -20,17 +32,14 @@ font-family: 'Vollkorn', serif;
                 <ul class="navbar-nav  sidebar sidebar-dark accordion " id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-
-                <div class="sidebar-brand-text mx-3 fontemp"><?php echo $_SESSION['name'] ?>&nbsp;<?php echo $_SESSION['name1'] ?></div>
-            </a>
+            <b><p class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                
+                <center>
+                <div class="sidebar-brand-text mx-3 text-uppercase fontemp tittlename " ><?php echo $_SESSION['name'] ?><br><?php echo $_SESSION['name1'] ?></div>
+            </p></b>
             <center>
 
-            <img src="img/nik.jpg" width="100" height="90" style="border-radius: 50%;"><br>
-            <br>
+            <br><br><br>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -38,7 +47,7 @@ font-family: 'Vollkorn', serif;
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="dashboard.php">
-                    <i class="fa fa-home"></i>
+                    <i class="fa fa-home text-info"></i>
                     <span class="fontemp">Home</span></a>
             </li>
 
@@ -47,7 +56,7 @@ font-family: 'Vollkorn', serif;
 
               <li class="nav-item active">
                 <a class="nav-link" href="task_assign.php">
-                    <i class="fa fa-tasks"></i>
+                    <i class="fa fa-tasks text-info"></i>
                     <span class="fontemp">Task Assign</span></a>
             </li>
 
@@ -55,7 +64,7 @@ font-family: 'Vollkorn', serif;
 
               <li class="nav-item active">
                 <a class="nav-link" href="#">
-                   <i class="fa fa-user-secret"></i>
+                   <i class="fa fa-user-secret text-info "></i>
                     <span class="fontemp">Profile</span></a>
             </li>
 
@@ -63,7 +72,7 @@ font-family: 'Vollkorn', serif;
 
               <li class="nav-item active">
                 <a class="nav-link" href="employeereplied_task.php">
-                  <i class="fa fa-reply-all"></i>
+                  <i class="fa fa-reply-all text-info"></i>
                     <span class="fontemp">Replied Task</span></a>
             </li>
 
@@ -71,10 +80,19 @@ font-family: 'Vollkorn', serif;
             <hr class="sidebar-divider d-none d-md-block">
 
               <li class="nav-item active">
-                <a class="nav-link" href="#">
-                   <i class="fa fa-hand-paper-o"></i>
+                <a class="nav-link" href="view_leaves.php">
+                   <i class="fa fa-hand-paper-o text-info"></i>
                     <span class="fontemp">Leaves</span></a>
             </li>
+
+              <hr class="sidebar-divider d-none d-md-block">
+
+              <li class="nav-item active">
+                <a class="nav-link" href="applied_leaves.php">
+                   <i class="fa fa-hand-paper-o text-info"></i>
+                    <span class="fontemp">Applied Leaves</span></a>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -264,8 +282,7 @@ font-family: 'Vollkorn', serif;
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['name'] ?>&nbsp;<?php echo $_SESSION['name1'] ?></span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/nik.jpg">
+                                <img class="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfEIsOBdXm2x5KrZR7hMuWYFTzPLgbqy19og&usqp=CAU">
                             </a>
                             <!-- Dropdown - User Information -->
                            

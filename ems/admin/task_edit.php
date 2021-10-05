@@ -43,8 +43,7 @@ include("sidebar.php");
                 				include "../dbe.php";
                 				$q = "select * from employee where role In('employee')";
                 				$p = mysqli_query($sop,$q);
-                				while($f = mysqli_fetch_array($p))
-                				{ 
+                				$f = mysqli_fetch_array($p)
                 				?>
                                  
                 				<div class="row mb-3">
@@ -57,20 +56,19 @@ include("sidebar.php");
                                         }
 
 
+                                    
                                         ?>
                                         >
                 					</div>
                 					<div class="col-md-11">
-                				        <h5 class="text-capitalize"><input type="text" name="first_name" value="<?php echo $f['first_name'] ?>">&nbsp;
+                				        <h5 class="text-capitalize"><input type="text" name="first_name" value="<?php echo $f['first_name'] ?>&nbsp;<?php echo $f['last_name'] ?>">
 
-                				       <input type="text" name="last_name" value="<?php echo $f['last_name'] ?>">
+                				       
                 				       
                 			            </h5>
                 			        </div>
                 			    </div>
-                				<?php
-                				} 
-                				?>
+                				
                 			</div>
                 			<div class="col-md-1">
                 			</div>

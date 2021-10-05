@@ -28,19 +28,21 @@ include ("sidebar.php");
                     				<h2 class="mt-3 text-white ">Employees</h2></i>
                     				<hr class="sidebar-divider">
 
-                                     <form method="post" action="task_insert.php">
+                                     <form method="post" action="leave_insert.php">
                                         
                     				<?php
                     				include "../dbe.php";
-                    				$q = "select * from employee where role In('employee')";
+                    				$q = "select * from employee where role = 'employee'";
                     				$p = mysqli_query($sop,$q);
                     				while($f = mysqli_fetch_array($p))
                     				{ 
                     				?>
                     				<div class="row mb-4">
                     					<div class="col-md-1">
-                    						<input type="checkbox" name="id[]" value="<?php echo $f['id'] ?>">
+                    						<input type="checkbox" name="assigned_to[]" value="<?php echo $f['id'] ?>">
                     					</div>
+
+                                        
                     					<div class="col-md-11">
                     				        <h5 class="text-capitalize text-white"><?php echo $f['first_name'] ?>&nbsp;<?php echo $f['last_name'] ?>
                     			            </h5>
@@ -58,8 +60,8 @@ include ("sidebar.php");
                                           
                             				<div class="form-group">
                                                 <label>Valid form:</label>
-                                                <input type="date" name="valid_form" class="form-control ">
-                                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="date" name="valid_from" class="form-control ">
+                                            </div>
 
                                             <div class="form-group">
                                                 <label>Valid to:</label>
@@ -69,7 +71,7 @@ include ("sidebar.php");
                                             <div class="form-group">
                                                 <label>Earning Leaves:</label>
                                                 <input type="text" name="earning_leave" class="form-control" placeholder="numbers of Leaves">
-                                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            </div>
 
                                             <div class="form-group">
                                                 <label>Medical Leaves:</label>
@@ -80,8 +82,10 @@ include ("sidebar.php");
                                                 <label>Casual Leaves:</label>
                                                 <input type="text" name="casual_leave" class="form-control " placeholder="numbers of Leaves">
                                             </div>
+                                          
                                             <!-- admin taking  start -->
-                                            <input type="hidden" name="apply_by" value="<?php echo $c['id']?>">
+
+                                            <input type="text" name="assigned_by" value="<?php echo $_SESSION['id']?>">
                                            
                                             <!-- admin taking  start -->
                             				<div class="d-grid gap-2">
@@ -96,6 +100,84 @@ include ("sidebar.php");
                 </div>
                             
             </div>
+
+             <div style="overflow-x: auto;">
+    
+  
+
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+
+                  <tr class="text-center text-dark bg-warning">
+                  
+                     <th>Valid_from</th>
+                    <th>Valid_to</th>
+                    <th>Employee Name</th>
+                    <th>Earning_leaves</th>
+                    <th>Medical_leaves</th>
+                    <th>Casual_leaves</th>
+                    
+
+
+
+                  </tr>
+                  </thead>
+                  <?php
+                  
+                           include "../dbe.php"; 
+                            $a = "select * from assign_leave inner join employee on assign_leave.assigned_to=employee.id order by l_id desc";
+                            $b = mysqli_query($sop,$a);
+                           while( $c = mysqli_fetch_array($b))
+                           {
+                            
+
+                    ?>
+
+                  <tr class=" bg-secondary text-center text-white">
+
+
+                
+                  <td><?php echo $c['valid_from']?></td>
+                  <td><?php echo $c['valid_to']?></td>
+                  <td><?php echo $c['first_name']?></td>
+
+                  <td><?php echo $c['earning_leaves']?></td>
+                  <td><?php echo $c['medical_leaves']?></td>
+                  <td><?php echo $c['casual_leaves']?></td>
+                  
+
+                 </tr>
+          
+                 <?php
+
+                    }
+                 
+                 ?>
+
+                  <tbody>
+                  
+                  </tbody>
+                   <tr class="text-center text-dark bg-warning">
+                 
+                    <th>Valid_from</th>
+                    <th>Valid_to</th>
+                    <th>Employee Name</th>
+                    <th>Earning_leaves</th>
+                    <th>Medical_leaves</th>
+                    <th>Casual_leaves</th>
+                    
+                     
+
+                    
+                  </tr>
+                  </tfoot>
+
+                     
+                  </thead>
+                 
+                  <tfoot>
+                 
+                </table>
                           
         </div>
            

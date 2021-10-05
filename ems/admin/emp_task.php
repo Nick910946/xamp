@@ -58,7 +58,7 @@ include ("sidebar.php");
 
                                             <!-- admin taking  start -->
                                             <br>
-                                            <input type="text" name="assined_by" value="<?php echo $_SESSION['name'] ?>">
+                                            <input type="text" name="assigned_by" value="<?php echo $_SESSION['name'] ?>">
                                             <!-- admin taking  start -->
                             				<div class="d-grid gap-2">
                             				<button class="btn shadow m-3" type="submit" style="background: #030618; color: white;">Submit</button>

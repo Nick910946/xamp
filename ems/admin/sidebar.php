@@ -2,14 +2,22 @@
 <style >
 .sidebar{
 
-    background:url(https://us.123rf.com/450wm/malshak/malshak2003/malshak200300031/141291189-abstract-dark-red-blue-purple-blurred-background-pattern-wallpaper-smooth-color-gradient-texture-ras.jpg?ver=6); 
+    background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPHYxDTEUFAPVTiCsZDYXA32stgIPYnp8Y9Oq34d5iAO7C70nSPjEPC1cZJSzgKxim1I&usqp=CAU); 
     background-size:cover;
+    background-repeat: none;
 
 }
-.sidebarfont{
- font-family: "Sofia", sans-serif;
+
+.admin{
+
+font-family: 'Coda Caption', sans-serif;
+letter-spacing: 3px;
+margin-top:-60px;
+color:white;
+text-alingn:center;
 
 }
+
 
 </style>
 
@@ -17,18 +25,16 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-                <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+                <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" >
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                 <div class="sidebar-brand-text mx-3  font-effect-fire" style="letter-spacing: 2px;"><?php echo $_SESSION['name']?>&nbsp;<?php echo $_SESSION['name1']?></div>
-            </a>
+            <b><p class="sidebar-brand d-flex align-items-center  justify-content-center" >
+                <center>
+                 <div class="sidebar-brand-text mx-3 admin"><?php echo $_SESSION['name']?><br><?php echo $_SESSION['name1']?></div>
+            </p></b>
             <center>
 
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgiMAT18_cMzv-RJywhBJzPgpZw7UllhYLOw&usqp=CAU" width="100" height="90" style="border-radius: 50%;"><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPBZB273v3S2Erim4eCgffAIMl7UwKYXXbQ&usqp=CAU" width="100" height="90" style="border-radius: 50%;"><br>
             <br>
 
             <!-- Divider -->
@@ -85,6 +91,14 @@
                     <span class="sidebarfont">Assign Leave</span></a>
             </li>
 
+             <hr class="sidebar-divider d-none d-md-block">
+
+              <li class="nav-item active">
+                <a class="nav-link" href="empview_leave.php">
+                   <i class="fa fa-calendar-check-o text-info"></i>
+                    <span class="sidebarfont">Employees on Leave</span></a>
+            </li>
+
 
 
             <!-- Divider -->
@@ -106,8 +120,8 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
+                    <button id="sidebarToggle collapsed" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>   
                     </button>
 
                     <!-- Topbar Search -->

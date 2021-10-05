@@ -31,7 +31,7 @@ include("sidebar.php");
                   <td><?php echo $c['t_id']?></td>
                   <td><?php echo $c['task']?></td>
                   <td><?php echo $c['first_name']?>&nbsp;<?php echo $c['last_name']?></td>
-                  <td><?php echo $c['assined_by']?></td>
+                  <td><?php echo $c['assigned_by']?></td>
 
 
                    
@@ -44,7 +44,7 @@ include("sidebar.php");
 
                       <a href="task_edit.php?edit=<?php echo $c['id']?>"><i class="fa fa-pencil-square-o text-primary " style="font-size: 25px;"></i></a>&nbsp;&nbsp;
 
-                      <a href="emp_edit.php?delete=<?php echo $c['id']?>"><i class="fa fa-trash-o  text-danger " style="font-size: 25px;"></i></a>
+                      <a href="task_del.php?del=<?php echo $c['id']?>"><i class="fa fa-trash-o  text-danger " style="font-size: 25px;"></i></a>
                       
 
 

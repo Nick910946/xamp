@@ -1,0 +1,4 @@
+RewiteEngine.On
+RewriteCond.%{REQUEST_FILENAME}.!-f
+RewriteCond.%{REQUEST_FILENAME}.!-d
+RewriteRule.^(.*)$.imdex.php/$1.[L]

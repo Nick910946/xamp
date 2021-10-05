@@ -50,7 +50,7 @@ include("sidebar.php");
 
                       <a href="emp_edit.php?shri=<?php echo $c['id']?>" class="fa fa-pencil text-warning" style="font-size: 25px;"></a>&nbsp;&nbsp;&nbsp;
 
-                      <a href="emp_delete.php?delete=<?php echo $c['id']?>"><i class="fa fa-trash-o  text-danger" style="font-size: 25px;"></i></a>
+                      <a href="emp_delete.php?del=<?php echo $c['id']?>"><i class="fa fa-trash-o  text-danger" style="font-size: 25px;"></i></a>
                       
 
 
